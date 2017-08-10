@@ -77,13 +77,11 @@ class LicenseToolsPlugin implements Plugin<Project> {
             initialize(project)
             generateLicensePage(project)
         }
-        generateLicensePage.dependsOn('checkLicenses')
 
         def generateLicenseJson = project.task('generateLicenseJson').doLast {
             initialize(project)
             generateLicenseJson(project)
         }
-        generateLicenseJson.dependsOn('checkLicenses')
 
         project.tasks.findByName("check").dependsOn('checkLicenses')
     }
