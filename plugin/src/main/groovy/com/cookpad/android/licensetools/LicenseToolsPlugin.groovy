@@ -180,8 +180,6 @@ class LicenseToolsPlugin implements Plugin<Project> {
                 content.append(Templates.buildLicenseHtml(libraryInfo));
             } catch (NotEnoughInformationException e) {
                 noLicenseLibraries.add(e.libraryInfo)
-            } catch (FileNotFoundException ignored) {
-               
             }
         }
 
